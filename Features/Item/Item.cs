@@ -1,0 +1,44 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using listly.Features.User;
+
+namespace listly.Features.Item
+{
+  [Table("items")]
+  public class Item
+  {
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Column("item_id")]
+    public int ItemId { get; set; }
+
+    [Column("list_id")]
+    public required int ListId { get; set; }
+
+    [Column("title")]
+    public required string Title { get; set; }
+
+    [Column("completed")]
+    public required bool Completed { get; set; } = false;
+
+    // Opcionales
+    [Column("description")]
+    public string? Description { get; set; }
+
+    [Column("notes")]
+    public string? Notes { get; set; } // Notas adicionales (opcionales)
+
+    [Column("checked_by")]
+    public string? CheckedBy { get; set; }
+
+    [Column("quantity")]
+    public int? Quantity { get; set; }
+
+    [Column("unit")]
+    public string? Unit { get; set; }
+
+    // Navegación
+    public List.List? List { get; set; }
+    public User.User? CheckedUser { get; set; }
+  }
+}
