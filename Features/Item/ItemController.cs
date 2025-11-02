@@ -83,8 +83,8 @@ namespace listly.Features.Item
 
             if (shouldReceiveNotification && !string.IsNullOrEmpty(user.FcmToken))
             {
-              var statusIcon = item.Completed ? "✅" : "🔄";
-              var statusText = item.Completed ? "completó" : "marcó como pendiente";
+              var statusIcon = item.Completed ? "✅" : "❌";
+              var statusText = item.Completed ? "compró" : "marcó como no comprado";
 
               notificationRequests.Add(new NotificationRequest
               {
@@ -94,10 +94,8 @@ namespace listly.Features.Item
                 ClickAction = "OPEN_LIST",
                 Data = new Dictionary<string, string>
                 {
-                  ["type"] = "tasks",
-                  // ["listId"] = item.ListId.ToString(),
-                  // ["itemId"] = item.ItemId.ToString(),
-                  // ["completed"] = item.Completed.ToString()
+                  ["type"] = "toggle_item",
+                  ["listId"] = item.ListId.ToString(),
                 }
               });
             }
@@ -237,7 +235,8 @@ namespace listly.Features.Item
                 ClickAction = "OPEN_LIST",
                 Data = new Dictionary<string, string>
                 {
-                  ["type"] = "tasks",
+                  ["type"] = "updated_item",
+                  ["listId"] = item.ListId.ToString(),
                 }
               });
             }
@@ -329,9 +328,8 @@ namespace listly.Features.Item
                 ClickAction = "OPEN_LIST",
                 Data = new Dictionary<string, string>
                 {
-                  ["type"] = "tasks",
-                  // ["listId"] = itemToDelete.ListId.ToString(),
-                  // ["deletedItemTitle"] = itemToDelete.Title
+                  ["type"] = "deleted_item",
+                  ["listId"] = itemToDelete.ListId.ToString(),
                 }
               });
             }

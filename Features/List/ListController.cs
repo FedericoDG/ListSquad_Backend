@@ -128,9 +128,8 @@ namespace listly.Features.List
                 ClickAction = "OPEN_LIST",
                 Data = new Dictionary<string, string>
                 {
-                  ["type"] = "tasks",
-                  // ["listId"] = listId.ToString(),
-                  // ["itemId"] = item.ItemId.ToString()
+                  ["type"] = "added_item",
+                  ["listId"] = item.ListId.ToString(),
                 }
               });
             }

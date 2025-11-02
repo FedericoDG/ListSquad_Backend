@@ -1,4 +1,4 @@
-# 🏠 List Squad API – .NET 9 Web API
+# 📱 List Squad API – .NET 9 Web API
 
 API REST para gestionar listas colaborativas, items, invitaciones y notificaciones push.
 Desarrollado en ASP.NET Core Web API (.NET 9) con base de datos MySQL y Entity Framework Core.

@@ -12,7 +12,7 @@ using listly;
 namespace listly.Migrations
 {
     [DbContext(typeof(ListlyDbContext))]
-    [Migration("20251101042402_MigracionInicial")]
+    [Migration("20251102003124_MigracionInicial")]
     partial class MigracionInicial
     {
         /// <inheritdoc />
