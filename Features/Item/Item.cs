@@ -15,17 +15,17 @@ namespace listly.Features.Item
     [Column("list_id")]
     public required int ListId { get; set; }
 
-    [Column("title")]
+    [Column("title", TypeName = "varchar(60)")]
     public required string Title { get; set; }
 
     [Column("completed")]
     public required bool Completed { get; set; } = false;
 
     // Opcionales
-    [Column("description")]
+    [Column("description", TypeName = "varchar(100)")]
     public string? Description { get; set; }
 
-    [Column("notes")]
+    [Column("notes", TypeName = "varchar(100)")]
     public string? Notes { get; set; } // Notas adicionales (opcionales)
 
     [Column("checked_by")]
@@ -34,7 +34,7 @@ namespace listly.Features.Item
     [Column("quantity")]
     public int? Quantity { get; set; }
 
-    [Column("unit")]
+    [Column("unit", TypeName = "varchar(10)")]
     public string? Unit { get; set; }
 
     // Navegación

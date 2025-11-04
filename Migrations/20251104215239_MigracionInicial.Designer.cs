@@ -12,7 +12,7 @@ using listly;
 namespace listly.Migrations
 {
     [DbContext(typeof(ListlyDbContext))]
-    [Migration("20251104183817_MigracionInicial")]
+    [Migration("20251104215239_MigracionInicial")]
     partial class MigracionInicial
     {
         /// <inheritdoc />
@@ -82,7 +82,7 @@ namespace listly.Migrations
                         .HasColumnName("completed");
 
                     b.Property<string>("Description")
-                        .HasColumnType("longtext")
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("description");
 
                     b.Property<int>("ListId")
@@ -90,7 +90,7 @@ namespace listly.Migrations
                         .HasColumnName("list_id");
 
                     b.Property<string>("Notes")
-                        .HasColumnType("longtext")
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("notes");
 
                     b.Property<int?>("Quantity")
@@ -99,11 +99,11 @@ namespace listly.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("varchar(60)")
                         .HasColumnName("title");
 
                     b.Property<string>("Unit")
-                        .HasColumnType("longtext")
+                        .HasColumnType("varchar(10)")
                         .HasColumnName("unit");
 
                     b.HasKey("ItemId");
@@ -126,7 +126,7 @@ namespace listly.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("varchar(500)")
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("description");
 
                     b.Property<string>("Icon")
@@ -141,7 +141,7 @@ namespace listly.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("varchar(60)")
                         .HasColumnName("title");
 
                     b.HasKey("ListId");

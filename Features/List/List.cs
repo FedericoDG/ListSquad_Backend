@@ -12,10 +12,10 @@ namespace listly.Features.List
     [Column("list_id")]
     public int ListId { get; set; }
 
-    [Column("title", TypeName = "varchar(100)")]
+    [Column("title", TypeName = "varchar(60)")]
     public required string Title { get; set; }
 
-    [Column("description", TypeName = "varchar(500)")]
+    [Column("description", TypeName = "varchar(100)")]
     public string Description { get; set; } = "";
 
     [Column("icon", TypeName = "varchar(10)")]

@@ -82,9 +82,9 @@ namespace listly.Migrations
                 {
                     list_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    title = table.Column<string>(type: "varchar(100)", nullable: false)
+                    title = table.Column<string>(type: "varchar(60)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    description = table.Column<string>(type: "varchar(500)", nullable: false)
+                    description = table.Column<string>(type: "varchar(100)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     icon = table.Column<string>(type: "varchar(10)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -201,17 +201,17 @@ namespace listly.Migrations
                     item_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     list_id = table.Column<int>(type: "int", nullable: false),
-                    title = table.Column<string>(type: "longtext", nullable: false)
+                    title = table.Column<string>(type: "varchar(60)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     completed = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    description = table.Column<string>(type: "longtext", nullable: true)
+                    description = table.Column<string>(type: "varchar(100)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    notes = table.Column<string>(type: "longtext", nullable: true)
+                    notes = table.Column<string>(type: "varchar(100)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     checked_by = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     quantity = table.Column<int>(type: "int", nullable: true),
-                    unit = table.Column<string>(type: "longtext", nullable: true)
+                    unit = table.Column<string>(type: "varchar(10)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
