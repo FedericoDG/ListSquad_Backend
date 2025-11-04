@@ -10,7 +10,6 @@ namespace listly.Features.User
       public required string Email { get; set; }
       public required string DisplayName { get; set; }
       public required string PhotoUrl { get; set; }
-      public required string ProviderId { get; set; }
       public required string FcmToken { get; set; }
     }
 
@@ -20,7 +19,6 @@ namespace listly.Features.User
       public required string Email { get; set; }
       public required string DisplayName { get; set; }
       public required string PhotoUrl { get; set; }
-      public required string ProviderId { get; set; }
       public required string FcmToken { get; set; }
       public UserSubscriptionDto? Subscription { get; set; }
       public UserSettingsDto? Settings { get; set; }

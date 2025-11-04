@@ -349,22 +349,22 @@ namespace listly.Migrations
                         {
                             UId = "57cV0RNcC9bnCKzbcNiBp1Tzr822",
                             SubscriptionId = 1,
-                            EndDate = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local),
-                            StartDate = new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local)
+                            EndDate = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local),
+                            StartDate = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             UId = "hQZnBgjuOwTTGIOVWgGHsE95OOX2",
                             SubscriptionId = 1,
-                            EndDate = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local),
-                            StartDate = new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local)
+                            EndDate = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local),
+                            StartDate = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             UId = "IMImLkBokLWuwjRGy7Jm7wnBWAB3",
                             SubscriptionId = 1,
-                            EndDate = new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local),
-                            StartDate = new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local)
+                            EndDate = new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local),
+                            StartDate = new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local)
                         });
                 });
 
@@ -394,11 +394,6 @@ namespace listly.Migrations
                         .HasColumnType("varchar(500)")
                         .HasColumnName("photo_url");
 
-                    b.Property<string>("ProviderId")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)")
-                        .HasColumnName("provider_id");
-
                     b.HasKey("UId");
 
                     b.ToTable("users");
@@ -410,8 +405,7 @@ namespace listly.Migrations
                             DisplayName = "Federico González",
                             Email = "alambratore@gmail.com",
                             FcmToken = "",
-                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocJPzlf1C9crnRGlPqM8B-86Xm68mJmqQ-2oGr7kW11g4apmgPg=s96-c",
-                            ProviderId = "firebase"
+                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocJPzlf1C9crnRGlPqM8B-86Xm68mJmqQ-2oGr7kW11g4apmgPg=s96-c"
                         },
                         new
                         {
@@ -419,8 +413,7 @@ namespace listly.Migrations
                             DisplayName = "Steam Secundario",
                             Email = "steamsecundario@gmail.com",
                             FcmToken = "",
-                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocK35d11bNqi6k1mqlcxakZ7QFmnPHbkbYs4KZ5k47XwxC8YuA=s96-c",
-                            ProviderId = "firebase"
+                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocK35d11bNqi6k1mqlcxakZ7QFmnPHbkbYs4KZ5k47XwxC8YuA=s96-c"
                         },
                         new
                         {
@@ -428,8 +421,7 @@ namespace listly.Migrations
                             DisplayName = "Fogón de Hugo",
                             Email = "fogondehugo@gmail.com",
                             FcmToken = "",
-                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocKdkpsOMhRxy-XTt2CyCGKNLs9sQLThXYsv4ZJpQYCWx-qMwg=s96-c",
-                            ProviderId = "firebase"
+                            PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocKdkpsOMhRxy-XTt2CyCGKNLs9sQLThXYsv4ZJpQYCWx-qMwg=s96-c"
                         });
                 });
 

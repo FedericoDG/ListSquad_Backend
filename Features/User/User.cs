@@ -22,9 +22,6 @@ namespace listly.Features.User
     [Column("photo_url", TypeName = "varchar(500)")]
     public required string PhotoUrl { get; set; }
 
-    [Column("provider_id", TypeName = "varchar(50)")]
-    public required string ProviderId { get; set; }
-
     [Column("fcm_token", TypeName = "varchar(500)")]
     public string? FcmToken { get; set; }
 

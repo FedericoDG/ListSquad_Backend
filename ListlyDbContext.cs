@@ -135,7 +135,6 @@ namespace listly
           Email = "alambratore@gmail.com",
           DisplayName = "Federico González",
           PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocJPzlf1C9crnRGlPqM8B-86Xm68mJmqQ-2oGr7kW11g4apmgPg=s96-c",
-          ProviderId = "firebase",
           FcmToken = ""
         },
         new User
@@ -144,7 +143,6 @@ namespace listly
           Email = "steamsecundario@gmail.com",
           DisplayName = "Steam Secundario",
           PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocK35d11bNqi6k1mqlcxakZ7QFmnPHbkbYs4KZ5k47XwxC8YuA=s96-c",
-          ProviderId = "firebase",
           FcmToken = ""
         },
 
@@ -154,7 +152,6 @@ namespace listly
           Email = "fogondehugo@gmail.com",
           DisplayName = "Fogón de Hugo",
           PhotoUrl = "https://lh3.googleusercontent.com/a/ACg8ocKdkpsOMhRxy-XTt2CyCGKNLs9sQLThXYsv4ZJpQYCWx-qMwg=s96-c",
-          ProviderId = "firebase",
           FcmToken = ""
         }
         );

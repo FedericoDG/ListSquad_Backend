@@ -45,7 +45,6 @@ namespace listly.Features.Invitation
     public string Email { get; set; } = default!;
     public string DisplayName { get; set; } = default!;
     public string? PhotoUrl { get; set; }
-    public string ProviderId { get; set; } = default!;
     public string FcmToken { get; set; } = default!;
   }
 }

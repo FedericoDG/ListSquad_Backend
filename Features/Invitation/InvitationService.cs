@@ -74,7 +74,6 @@ namespace listly.Features.Invitation
           Email = invitationWithUsers.FromUser.Email,
           DisplayName = invitationWithUsers.FromUser.DisplayName,
           PhotoUrl = invitationWithUsers.FromUser.PhotoUrl,
-          ProviderId = invitationWithUsers.FromUser.ProviderId,
           FcmToken = invitationWithUsers.FromUser.FcmToken ?? ""
         } : null,
         ToUser = invitationWithUsers.ToUser != null ? new UserResponseDto
@@ -83,7 +82,6 @@ namespace listly.Features.Invitation
           Email = invitationWithUsers.ToUser.Email,
           DisplayName = invitationWithUsers.ToUser.DisplayName,
           PhotoUrl = invitationWithUsers.ToUser.PhotoUrl,
-          ProviderId = invitationWithUsers.ToUser.ProviderId,
           FcmToken = invitationWithUsers.ToUser.FcmToken ?? ""
         } : null
       };
@@ -122,7 +120,6 @@ namespace listly.Features.Invitation
           Email = invitation.FromUser.Email,
           DisplayName = invitation.FromUser.DisplayName,
           PhotoUrl = invitation.FromUser.PhotoUrl,
-          ProviderId = invitation.FromUser.ProviderId,
           FcmToken = invitation.FromUser.FcmToken ?? ""
         } : null,
         ToUser = invitation.ToUser != null ? new UserResponseDto
@@ -131,7 +128,6 @@ namespace listly.Features.Invitation
           Email = invitation.ToUser.Email,
           DisplayName = invitation.ToUser.DisplayName,
           PhotoUrl = invitation.ToUser.PhotoUrl,
-          ProviderId = invitation.ToUser.ProviderId,
           FcmToken = invitation.ToUser.FcmToken ?? ""
         } : null
       }).ToList();

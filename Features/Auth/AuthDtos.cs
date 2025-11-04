@@ -20,9 +20,6 @@ namespace listly.Features.Auth
       [Url(ErrorMessage = "El formato de la URL no es válido")]
       public required string PhotoUrl { get; set; }
 
-      [Required(ErrorMessage = "El ID del proveedor es requerido")]
-      public required string ProviderId { get; set; }
-
       [Required(ErrorMessage = "El token FCM es requerido")]
       public required string FcmToken { get; set; }
 
@@ -33,7 +30,7 @@ namespace listly.Features.Auth
       [Required(ErrorMessage = "El UID es requerido")]
       public required string UId { get; set; }
 
-      public string FcmToken { get; set; }
+      public string? FcmToken { get; set; }
     }
 
     public class AuthResponseDto

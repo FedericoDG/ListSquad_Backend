@@ -63,7 +63,6 @@ namespace listly.Features.User
         Email = user.Email,
         DisplayName = user.DisplayName,
         PhotoUrl = user.PhotoUrl,
-        ProviderId = user.ProviderId,
         FcmToken = user.FcmToken ?? "",
         Subscription = activeSubscription != null ? new UserSubscriptionDto
         {

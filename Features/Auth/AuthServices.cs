@@ -29,7 +29,6 @@ namespace listly.Features.Auth
         Email = dto.Email,
         DisplayName = dto.DisplayName,
         PhotoUrl = dto.PhotoUrl,
-        ProviderId = dto.ProviderId,
         FcmToken = dto.FcmToken,
       };
       _context.User.Add(user);

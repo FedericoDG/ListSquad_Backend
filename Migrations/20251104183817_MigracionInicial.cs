@@ -67,8 +67,6 @@ namespace listly.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     photo_url = table.Column<string>(type: "varchar(500)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    provider_id = table.Column<string>(type: "varchar(50)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     fcm_token = table.Column<string>(type: "varchar(500)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -271,12 +269,12 @@ namespace listly.Migrations
 
             migrationBuilder.InsertData(
                 table: "users",
-                columns: new[] { "uid", "display_name", "email", "fcm_token", "photo_url", "provider_id" },
+                columns: new[] { "uid", "display_name", "email", "fcm_token", "photo_url" },
                 values: new object[,]
                 {
-                    { "57cV0RNcC9bnCKzbcNiBp1Tzr822", "Federico González", "alambratore@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocJPzlf1C9crnRGlPqM8B-86Xm68mJmqQ-2oGr7kW11g4apmgPg=s96-c", "firebase" },
-                    { "hQZnBgjuOwTTGIOVWgGHsE95OOX2", "Steam Secundario", "steamsecundario@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocK35d11bNqi6k1mqlcxakZ7QFmnPHbkbYs4KZ5k47XwxC8YuA=s96-c", "firebase" },
-                    { "IMImLkBokLWuwjRGy7Jm7wnBWAB3", "Fogón de Hugo", "fogondehugo@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocKdkpsOMhRxy-XTt2CyCGKNLs9sQLThXYsv4ZJpQYCWx-qMwg=s96-c", "firebase" }
+                    { "57cV0RNcC9bnCKzbcNiBp1Tzr822", "Federico González", "alambratore@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocJPzlf1C9crnRGlPqM8B-86Xm68mJmqQ-2oGr7kW11g4apmgPg=s96-c" },
+                    { "hQZnBgjuOwTTGIOVWgGHsE95OOX2", "Steam Secundario", "steamsecundario@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocK35d11bNqi6k1mqlcxakZ7QFmnPHbkbYs4KZ5k47XwxC8YuA=s96-c" },
+                    { "IMImLkBokLWuwjRGy7Jm7wnBWAB3", "Fogón de Hugo", "fogondehugo@gmail.com", "", "https://lh3.googleusercontent.com/a/ACg8ocKdkpsOMhRxy-XTt2CyCGKNLs9sQLThXYsv4ZJpQYCWx-qMwg=s96-c" }
                 });
 
             migrationBuilder.InsertData(
@@ -299,9 +297,9 @@ namespace listly.Migrations
                 columns: new[] { "subscription_id", "uid", "end_date", "start_date" },
                 values: new object[,]
                 {
-                    { 1, "57cV0RNcC9bnCKzbcNiBp1Tzr822", new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local) },
-                    { 1, "hQZnBgjuOwTTGIOVWgGHsE95OOX2", new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local) },
-                    { 1, "IMImLkBokLWuwjRGy7Jm7wnBWAB3", new DateTime(2025, 12, 1, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 1, 0, 0, 0, 0, DateTimeKind.Local) }
+                    { 1, "57cV0RNcC9bnCKzbcNiBp1Tzr822", new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local) },
+                    { 1, "hQZnBgjuOwTTGIOVWgGHsE95OOX2", new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local) },
+                    { 1, "IMImLkBokLWuwjRGy7Jm7wnBWAB3", new DateTime(2025, 12, 4, 0, 0, 0, 0, DateTimeKind.Local), new DateTime(2025, 11, 4, 0, 0, 0, 0, DateTimeKind.Local) }
                 });
 
             migrationBuilder.InsertData(

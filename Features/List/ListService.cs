@@ -104,7 +104,6 @@ namespace listly.Features.List
           Email = owner.Email,
           DisplayName = owner.DisplayName,
           PhotoUrl = owner.PhotoUrl,
-          ProviderId = owner.ProviderId,
           FcmToken = owner.FcmToken ?? ""
         };
       }
@@ -118,7 +117,6 @@ namespace listly.Features.List
           Email = lu.User.Email,
           DisplayName = lu.User.DisplayName,
           PhotoUrl = lu.User.PhotoUrl,
-          ProviderId = lu.User.ProviderId,
           FcmToken = lu.User.FcmToken ?? ""
         })
         .ToList();
