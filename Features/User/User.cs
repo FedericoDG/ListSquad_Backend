@@ -9,10 +9,10 @@ namespace listly.Features.User
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("uid", TypeName = "varchar(255)")]
+    [Column("uid", TypeName = "varchar(30)")]
     public required string UId { get; set; }
 
-    [Column("email", TypeName = "varchar(255)")]
+    [Column("email", TypeName = "varchar(100)")]
     [EmailAddress]
     public required string Email { get; set; }
 
@@ -22,7 +22,7 @@ namespace listly.Features.User
     [Column("photo_url", TypeName = "varchar(500)")]
     public required string PhotoUrl { get; set; }
 
-    [Column("fcm_token", TypeName = "varchar(500)")]
+    [Column("fcm_token", TypeName = "varchar(200)")]
     public string? FcmToken { get; set; }
 
     // Navegación

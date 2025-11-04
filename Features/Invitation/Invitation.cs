@@ -25,10 +25,10 @@ namespace listly.Features.Invitation
     [Column("list_id")]
     public int ListId { get; set; }
 
-    [Column("from_uid", TypeName = "varchar(255)")]
+    [Column("from_uid", TypeName = "varchar(30)")]
     public string FromUserId { get; set; } = default!;
 
-    [Column("to_uid", TypeName = "varchar(255)")]
+    [Column("to_uid", TypeName = "varchar(30)")]
     public string ToUserId { get; set; } = default!;
 
     [Column("status", TypeName = "varchar(20)")]

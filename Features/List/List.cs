@@ -21,7 +21,7 @@ namespace listly.Features.List
     [Column("icon", TypeName = "varchar(10)")]
     public required string Icon { get; set; }
 
-    [Column("owner_uid", TypeName = "varchar(255)")]
+    [Column("owner_uid", TypeName = "varchar(30)")]
     public required string OwnerUid { get; set; }
 
     // Navegación

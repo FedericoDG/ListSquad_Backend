@@ -23,7 +23,7 @@ namespace listly.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    user_uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    user_uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     preference_id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -59,15 +59,15 @@ namespace listly.Migrations
                 name: "users",
                 columns: table => new
                 {
-                    uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    email = table.Column<string>(type: "varchar(255)", nullable: false)
+                    email = table.Column<string>(type: "varchar(100)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     display_name = table.Column<string>(type: "varchar(100)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     photo_url = table.Column<string>(type: "varchar(500)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    fcm_token = table.Column<string>(type: "varchar(500)", nullable: true)
+                    fcm_token = table.Column<string>(type: "varchar(200)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -88,7 +88,7 @@ namespace listly.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     icon = table.Column<string>(type: "varchar(10)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    owner_uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    owner_uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -104,12 +104,12 @@ namespace listly.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Settings",
+                name: "user_settings",
                 columns: table => new
                 {
                     SettingId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    UserUid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    user_uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ReceiveInvitationNotifications = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ReceiveItemAddedNotifications = table.Column<bool>(type: "tinyint(1)", nullable: false),
@@ -118,10 +118,10 @@ namespace listly.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Settings", x => x.SettingId);
+                    table.PrimaryKey("PK_user_settings", x => x.SettingId);
                     table.ForeignKey(
-                        name: "FK_Settings_users_UserUid",
-                        column: x => x.UserUid,
+                        name: "FK_user_settings_users_user_uid",
+                        column: x => x.user_uid,
                         principalTable: "users",
                         principalColumn: "uid",
                         onDelete: ReferentialAction.Cascade);
@@ -132,7 +132,7 @@ namespace listly.Migrations
                 name: "user_subscriptions",
                 columns: table => new
                 {
-                    uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     subscription_id = table.Column<int>(type: "int", nullable: false),
                     start_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -163,9 +163,9 @@ namespace listly.Migrations
                     invitation_id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     list_id = table.Column<int>(type: "int", nullable: false),
-                    from_uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    from_uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    to_uid = table.Column<string>(type: "varchar(255)", nullable: false)
+                    to_uid = table.Column<string>(type: "varchar(30)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     status = table.Column<string>(type: "varchar(20)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -208,7 +208,7 @@ namespace listly.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     notes = table.Column<string>(type: "varchar(100)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    checked_by = table.Column<string>(type: "varchar(255)", nullable: true)
+                    checked_by = table.Column<string>(type: "varchar(30)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     quantity = table.Column<int>(type: "int", nullable: true),
                     unit = table.Column<string>(type: "varchar(10)", nullable: true)
@@ -278,19 +278,19 @@ namespace listly.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Settings",
-                columns: new[] { "SettingId", "ReceiveInvitationNotifications", "ReceiveItemAddedNotifications", "ReceiveItemDeletedNotifications", "ReceiveItemStatusChangedNotifications", "UserUid" },
+                table: "lists",
+                columns: new[] { "list_id", "description", "icon", "owner_uid", "title" },
+                values: new object[] { 1, "Lista para la compra semanal", "🛒", "57cV0RNcC9bnCKzbcNiBp1Tzr822", "Lista de Compras" });
+
+            migrationBuilder.InsertData(
+                table: "user_settings",
+                columns: new[] { "SettingId", "ReceiveInvitationNotifications", "ReceiveItemAddedNotifications", "ReceiveItemDeletedNotifications", "ReceiveItemStatusChangedNotifications", "user_uid" },
                 values: new object[,]
                 {
                     { 1, true, true, true, true, "57cV0RNcC9bnCKzbcNiBp1Tzr822" },
                     { 2, true, true, true, true, "hQZnBgjuOwTTGIOVWgGHsE95OOX2" },
                     { 3, true, true, true, true, "IMImLkBokLWuwjRGy7Jm7wnBWAB3" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "lists",
-                columns: new[] { "list_id", "description", "icon", "owner_uid", "title" },
-                values: new object[] { 1, "Lista para la compra semanal", "🛒", "57cV0RNcC9bnCKzbcNiBp1Tzr822", "Lista de Compras" });
 
             migrationBuilder.InsertData(
                 table: "user_subscriptions",
@@ -343,9 +343,9 @@ namespace listly.Migrations
                 column: "owner_uid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Settings_UserUid",
-                table: "Settings",
-                column: "UserUid",
+                name: "IX_user_settings_user_uid",
+                table: "user_settings",
+                column: "user_uid",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -370,7 +370,7 @@ namespace listly.Migrations
                 name: "payment_mappings");
 
             migrationBuilder.DropTable(
-                name: "Settings");
+                name: "user_settings");
 
             migrationBuilder.DropTable(
                 name: "user_subscriptions");

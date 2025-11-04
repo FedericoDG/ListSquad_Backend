@@ -3,12 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace listly.Features.Setting
 {
+  [Table("user_settings")]
   public class Setting
   {
     [Key]
     public int SettingId { get; set; }
 
     [Required]
+    [Column("user_uid", TypeName = "varchar(30)")]
     public required string UserUid { get; set; }
 
     // Configuraciones de notificaciones (por defecto todas en true)

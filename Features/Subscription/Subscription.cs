@@ -28,7 +28,7 @@ namespace listly.Features.Subscription
   [Table("user_subscriptions")]
   public class UserSubscription
   {
-    [Column("uid", TypeName = "varchar(255)")]
+    [Column("uid", TypeName = "varchar(30)")]
     public string UId { get; set; } = default!;
 
     [Column("subscription_id")]

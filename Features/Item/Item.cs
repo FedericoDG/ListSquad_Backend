@@ -26,9 +26,9 @@ namespace listly.Features.Item
     public string? Description { get; set; }
 
     [Column("notes", TypeName = "varchar(100)")]
-    public string? Notes { get; set; } // Notas adicionales (opcionales)
+    public string? Notes { get; set; }
 
-    [Column("checked_by")]
+    [Column("checked_by", TypeName = "varchar(30)")]
     public string? CheckedBy { get; set; }
 
     [Column("quantity")]

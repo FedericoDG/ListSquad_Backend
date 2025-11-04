@@ -11,7 +11,7 @@ namespace listly.Features.Subscription
     [Column("id")]
     public int Id { get; set; }
 
-    [Column("user_uid", TypeName = "varchar(255)")]
+    [Column("user_uid", TypeName = "varchar(30)")]
     public required string UserUid { get; set; }
 
     [Column("preference_id", TypeName = "varchar(255)")]

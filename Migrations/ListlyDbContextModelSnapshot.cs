@@ -33,7 +33,7 @@ namespace listly.Migrations
 
                     b.Property<string>("FromUserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("from_uid");
 
                     b.Property<int>("ListId")
@@ -47,7 +47,7 @@ namespace listly.Migrations
 
                     b.Property<string>("ToUserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("to_uid");
 
                     b.HasKey("InvitationId");
@@ -71,7 +71,7 @@ namespace listly.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("ItemId"));
 
                     b.Property<string>("CheckedBy")
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("checked_by");
 
                     b.Property<bool>("Completed")
@@ -133,7 +133,7 @@ namespace listly.Migrations
 
                     b.Property<string>("OwnerUid")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("owner_uid");
 
                     b.Property<string>("Title")
@@ -204,14 +204,15 @@ namespace listly.Migrations
 
                     b.Property<string>("UserUid")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("user_uid");
 
                     b.HasKey("SettingId");
 
                     b.HasIndex("UserUid")
                         .IsUnique();
 
-                    b.ToTable("Settings");
+                    b.ToTable("user_settings");
 
                     b.HasData(
                         new
@@ -268,7 +269,7 @@ namespace listly.Migrations
 
                     b.Property<string>("UserUid")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("user_uid");
 
                     b.HasKey("Id");
@@ -323,7 +324,7 @@ namespace listly.Migrations
             modelBuilder.Entity("listly.Features.Subscription.UserSubscription", b =>
                 {
                     b.Property<string>("UId")
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("uid");
 
                     b.Property<int>("SubscriptionId")
@@ -372,7 +373,7 @@ namespace listly.Migrations
                 {
                     b.Property<string>("UId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(30)")
                         .HasColumnName("uid");
 
                     b.Property<string>("DisplayName")
@@ -382,11 +383,11 @@ namespace listly.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("email");
 
                     b.Property<string>("FcmToken")
-                        .HasColumnType("varchar(500)")
+                        .HasColumnType("varchar(200)")
                         .HasColumnName("fcm_token");
 
                     b.Property<string>("PhotoUrl")
